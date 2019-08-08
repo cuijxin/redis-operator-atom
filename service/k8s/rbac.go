@@ -68,7 +68,7 @@ func (r *RBACService) CreateRole(namespace string, role *rbacv1.Role) error {
 	if err != nil {
 		return err
 	}
-	r.logger.WithField("namespace", namespace).WithField("role", role.Name).Infof("role", role.Name).Infof("role created")
+	r.logger.WithField("namespace", namespace).WithField("role", role.Name).Infof("role created")
 	return nil
 }
 
@@ -78,7 +78,7 @@ func (r *RBACService) UpdateRole(namespace string, role *rbacv1.Role) error {
 	if err != nil {
 		return err
 	}
-	s.logger.WithField("namespace", namespace).WithField("role", role.ObjectMeta.Name).Infof("role updated")
+	r.logger.WithField("namespace", namespace).WithField("role", role.ObjectMeta.Name).Infof("role updated")
 	return err
 }
 
