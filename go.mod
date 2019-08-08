@@ -1,9 +1,8 @@
-module redis-operator-atom
+module github.com/cuijxin/redis-operator-atom
 
 go 1.12
 
 require (
-	github.com/go-redis/redis v6.15.2+incompatible // indirect
 	github.com/grpc-ecosystem/grpc-gateway v1.6.2 // indirect
 	github.com/imdario/mergo v0.3.7 // indirect
 	github.com/sirupsen/logrus v1.4.2

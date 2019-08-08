@@ -2,10 +2,11 @@ package k8s_test
 
 import (
 	"errors"
-	"redis-operator-atom/log"
 	"testing"
 
-	"github.com/spotahome/redis-operator/service/k8s"
+	"github.com/cuijxin/redis-operator-atom/log"
+
+	"github.com/cuijxin/redis-operator-atom/service/k8s"
 	"github.com/stretchr/testify/assert"
 	rbacv1 "k8s.io/api/rbac/v1"
 	kubeerrors "k8s.io/apimachinery/pkg/api/errors"

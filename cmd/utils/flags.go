@@ -4,7 +4,7 @@ import (
 	"flag"
 	"path/filepath"
 
-	"redis-operator-atom/operator/redisfailover"
+	"github.com/cuijxin/redis-operator-atom/operator/redisfailover"
 
 	"k8s.io/client-go/util/homedir"
 )
