@@ -12,7 +12,7 @@ import (
 )
 
 // LoadKubernetesConfig loads kubernetes configuration based on flags.
-func LoadKubernetesConfig(flags *CMDFlags) (*rest.Config, error) {}
+func LoadKubernetesConfig(flags *CMDFlags) (*rest.Config, error) {
 	var cfg *rest.Config
 	// If devel mode then use configuration flag path.
 	if flags.Development {
