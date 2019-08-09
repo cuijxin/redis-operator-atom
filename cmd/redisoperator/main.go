@@ -8,6 +8,7 @@ import (
 	"syscall"
 	"time"
 
+	kmetrics "github.com/cuijxin/kooper-atom/monitoring/metrics"
 	"github.com/prometheus/client_golang/prometheus"
 	_ "k8s.io/client-go/plugin/pkg/client/auth/oidc"
 	"k8s.io/client-go/rest"
