@@ -9,7 +9,7 @@ import (
 	"github.com/cuijxin/redis-operator-atom/service/k8s"
 	"github.com/cuijxin/redis-operator-atom/service/redis"
 
-	kmetrics "gihhub.com/cuijxin/kooper-atom/monitoring/metrics"
+	kmetrics "github.com/cuijxin/kooper-atom/monitoring/metrics"
 	"github.com/cuijxin/kooper-atom/operator"
 	"github.com/cuijxin/kooper-atom/operator/controller"
 )
