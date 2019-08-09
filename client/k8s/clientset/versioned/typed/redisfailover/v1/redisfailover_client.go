@@ -19,8 +19,8 @@ limitations under the License.
 package v1
 
 import (
-	v1 "redis-operator-atom/api/redisfailover/v1"
-	"redis-operator-atom/client/k8s/clientset/versioned/scheme"
+	v1 "github.com/cuijxin/redis-operator-atom/api/redisfailover/v1"
+	"github.com/cuijxin/redis-operator-atom/client/k8s/clientset/versioned/scheme"
 
 	rest "k8s.io/client-go/rest"
 )

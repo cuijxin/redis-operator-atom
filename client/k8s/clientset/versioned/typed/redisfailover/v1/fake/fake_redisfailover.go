@@ -19,7 +19,7 @@ limitations under the License.
 package fake
 
 import (
-	redisfailoverv1 "redis-operator-atom/api/redisfailover/v1"
+	redisfailoverv1 "github.com/cuijxin/redis-operator-atom/api/redisfailover/v1"
 
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	labels "k8s.io/apimachinery/pkg/labels"

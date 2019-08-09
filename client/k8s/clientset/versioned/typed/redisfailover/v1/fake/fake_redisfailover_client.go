@@ -19,7 +19,7 @@ limitations under the License.
 package fake
 
 import (
-	v1 "redis-operator-atom/client/k8s/clientset/versioned/typed/redisfailover/v1"
+	v1 "github.com/cuijxin/redis-operator-atom/client/k8s/clientset/versioned/typed/redisfailover/v1"
 
 	rest "k8s.io/client-go/rest"
 	testing "k8s.io/client-go/testing"

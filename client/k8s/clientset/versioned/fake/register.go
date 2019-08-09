@@ -19,7 +19,7 @@ limitations under the License.
 package fake
 
 import (
-	databasesv1 "redis-operator-atom/api/redisfailover/v1"
+	databasesv1 "github.com/cuijxin/redis-operator-atom/api/redisfailover/v1"
 
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	runtime "k8s.io/apimachinery/pkg/runtime"

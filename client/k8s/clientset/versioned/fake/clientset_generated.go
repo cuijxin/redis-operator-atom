@@ -19,9 +19,9 @@ limitations under the License.
 package fake
 
 import (
-	clientset "redis-operator-atom/client/k8s/clientset/versioned"
-	databasesv1 "redis-operator-atom/client/k8s/clientset/versioned/typed/redisfailover/v1"
-	fakedatabasesv1 "redis-operator-atom/client/k8s/clientset/versioned/typed/redisfailover/v1/fake"
+	clientset "github.com/cuijxin/redis-operator-atom/client/k8s/clientset/versioned"
+	databasesv1 "github.com/cuijxin/redis-operator-atom/client/k8s/clientset/versioned/typed/redisfailover/v1"
+	fakedatabasesv1 "github.com/cuijxin/redis-operator-atom/client/k8s/clientset/versioned/typed/redisfailover/v1/fake"
 
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/watch"
