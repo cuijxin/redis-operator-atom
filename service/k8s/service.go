@@ -2,7 +2,7 @@ package k8s
 
 import (
 	"github.com/cuijxin/redis-operator-atom/log"
-	
+
 	corev1 "k8s.io/api/core/v1"
 	"k8s.io/apimachinery/pkg/api/errors"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
@@ -11,12 +11,28 @@ import (
 
 // Service the ServiceAccount service that knows how to interact with k8s to manage them.
 type Service interface {
+	GetService(namespace string, name string) (*corev1.Service, error)
+	CreateService(namespace string, service *corev1.Service) error
+	CreateIfNotExistsService(namespace string, service *corev1.Service) error
+	UpdateService(namespace string, service *corev1.Service) error
+	CreateOrUpdateService(namespace string, service *corev1.Service) error
+	DeleteService(namespace string, name string) error
+	ListServices(namespace string) (*corev1.ServiceList, error)
 }
 
 // ServiceService is the service service implementation using API calls to kubernetes.
 type ServiceService struct {
 	kubeClient kubernetes.Interface
 	logger     log.Logger
+}
+
+// NewServiceService returns a new Service KubeService.
+func NewServiceService(kubeClient kubernetes.Interface, logger log.Logger) *ServiceService {
+	logger = logger.With("service", "k8s.service")
+	return &ServiceService{
+		kubeClient: kubeClient,
+		logger:     logger,
+	}
 }
 
 func (s *ServiceService) GetService(namespace string, name string) (*corev1.Service, error) {
