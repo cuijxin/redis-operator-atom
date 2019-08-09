@@ -20,7 +20,6 @@ package fake
 
 import (
 	databasesv1 "github.com/cuijxin/redis-operator-atom/api/redisfailover/v1"
-
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 	schema "k8s.io/apimachinery/pkg/runtime/schema"

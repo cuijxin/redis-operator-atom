@@ -23,7 +23,6 @@ import (
 
 	v1 "github.com/cuijxin/redis-operator-atom/api/redisfailover/v1"
 	scheme "github.com/cuijxin/redis-operator-atom/client/k8s/clientset/versioned/scheme"
-
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	types "k8s.io/apimachinery/pkg/types"
 	watch "k8s.io/apimachinery/pkg/watch"

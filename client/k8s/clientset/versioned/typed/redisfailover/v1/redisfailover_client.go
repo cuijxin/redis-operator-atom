@@ -21,7 +21,6 @@ package v1
 import (
 	v1 "github.com/cuijxin/redis-operator-atom/api/redisfailover/v1"
 	"github.com/cuijxin/redis-operator-atom/client/k8s/clientset/versioned/scheme"
-
 	rest "k8s.io/client-go/rest"
 )
 

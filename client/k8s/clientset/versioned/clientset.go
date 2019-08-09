@@ -22,7 +22,6 @@ import (
 	"fmt"
 
 	databasesv1 "github.com/cuijxin/redis-operator-atom/client/k8s/clientset/versioned/typed/redisfailover/v1"
-
 	discovery "k8s.io/client-go/discovery"
 	rest "k8s.io/client-go/rest"
 	flowcontrol "k8s.io/client-go/util/flowcontrol"

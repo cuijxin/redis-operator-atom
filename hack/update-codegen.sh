@@ -15,6 +15,6 @@ GROUPS_VERSION="redisfailover:v1"
 # Typed listers & informers not required for the moment. Used with generic
 # custom informer/listerwatchers.
 ${CODEGEN_PKG}/generate-groups.sh "deepcopy,client" \
-  redis-operator-atom/client/k8s \
-  redis-operator-atom/api \
+  github.com/cuijxin/redis-operator-atom/client/k8s \
+  github.com/cuijxin/redis-operator-atom/api \
   "${GROUPS_VERSION}"

@@ -22,7 +22,6 @@ import (
 	clientset "github.com/cuijxin/redis-operator-atom/client/k8s/clientset/versioned"
 	databasesv1 "github.com/cuijxin/redis-operator-atom/client/k8s/clientset/versioned/typed/redisfailover/v1"
 	fakedatabasesv1 "github.com/cuijxin/redis-operator-atom/client/k8s/clientset/versioned/typed/redisfailover/v1/fake"
-
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/watch"
 	"k8s.io/client-go/discovery"
