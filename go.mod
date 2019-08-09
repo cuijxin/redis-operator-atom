@@ -6,6 +6,7 @@ require (
 	github.com/cuijxin/kooper-atom v0.0.1
 	github.com/grpc-ecosystem/grpc-gateway v1.6.2 // indirect
 	github.com/imdario/mergo v0.3.7 // indirect
+	github.com/prometheus/client_golang v1.1.0
 	github.com/sirupsen/logrus v1.4.2
 	github.com/stretchr/testify v1.3.0
 	k8s.io/api v0.0.0-20190802060718-d0d4f3afa3ab

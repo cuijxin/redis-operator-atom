@@ -7,6 +7,8 @@ import (
 	"k8s.io/client-go/kubernetes"
 	"k8s.io/client-go/rest"
 	"k8s.io/client-go/tools/clientcmd"
+
+	redisfailoverclientset "github.com/cuijxin/redis-operator-atom/client/k8s/clientset/versioned"
 )
 
 // LoadKubernetesConfig loads kubernetes configuration based on flags.
