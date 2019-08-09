@@ -3,7 +3,7 @@ module github.com/cuijxin/redis-operator-atom
 go 1.12
 
 require (
-	github.com/cuijxin/kooper-atom
+	github.com/cuijxin/kooper-atom v0.0.1
 	github.com/grpc-ecosystem/grpc-gateway v1.6.2 // indirect
 	github.com/imdario/mergo v0.3.7 // indirect
 	github.com/sirupsen/logrus v1.4.2
