@@ -4,6 +4,7 @@ go 1.12
 
 require (
 	github.com/cuijxin/kooper-atom v0.0.1
+	github.com/go-redis/redis v6.15.2+incompatible
 	github.com/grpc-ecosystem/grpc-gateway v1.6.2 // indirect
 	github.com/imdario/mergo v0.3.7 // indirect
 	github.com/prometheus/client_golang v1.1.0
