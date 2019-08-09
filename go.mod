@@ -4,6 +4,7 @@ go 1.12
 
 require (
 	github.com/cuijxin/kooper-atom v0.0.3
+	github.com/evanphx/json-patch v4.5.0+incompatible // indirect
 	github.com/go-redis/redis v6.15.2+incompatible
 	github.com/gogo/protobuf v1.2.1 // indirect
 	github.com/golang/groupcache v0.0.0-20190702054246-869f871628b6 // indirect
@@ -25,6 +26,7 @@ require (
 	k8s.io/client-go v11.0.0+incompatible
 	k8s.io/klog v0.3.3 // indirect
 	k8s.io/kube-openapi v0.0.0-20190722073852-5e22f3d471e6 // indirect
+	sigs.k8s.io/yaml v1.1.0 // indirect
 )
 
 replace (
