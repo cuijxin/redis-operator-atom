@@ -9,7 +9,7 @@ require (
 	github.com/sirupsen/logrus v1.4.2
 	github.com/stretchr/testify v1.3.0
 	k8s.io/api v0.0.0-20190802060718-d0d4f3afa3ab
-	k8s.io/apiextensions-apiserver v0.0.0-20190802061903-25691aabac0a
+	k8s.io/apiextensions-apiserver v0.0.0-20190330190201-4cac3cbacb4e
 	k8s.io/apimachinery v0.0.0-20190802060556-6fa4771c83b3
 	k8s.io/client-go v11.0.0+incompatible
 )

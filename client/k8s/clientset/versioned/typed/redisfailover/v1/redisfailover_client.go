@@ -20,7 +20,6 @@ package v1
 
 import (
 	v1 "github.com/cuijxin/redis-operator-atom/api/redisfailover/v1"
-	"github.com/cuijxin/redis-operator-atom/client/k8s/clientset/versioned/scheme"
 	rest "k8s.io/client-go/rest"
 )
 
@@ -70,7 +69,7 @@ func setConfigDefaults(config *rest.Config) error {
 	gv := v1.SchemeGroupVersion
 	config.GroupVersion = &gv
 	config.APIPath = "/apis"
-	config.NegotiatedSerializer = scheme.Codecs.WithoutConversion()
+	//config.NegotiatedSerializer = scheme.Codecs.WithoutConversion()
 
 	if config.UserAgent == "" {
 		config.UserAgent = rest.DefaultKubernetesUserAgent()

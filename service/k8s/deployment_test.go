@@ -1,12 +1,15 @@
 package k8s_test
 
 import (
+	"errors"
+	"testing"
+
 	"github.com/stretchr/testify/assert"
 	appsv1 "k8s.io/api/apps/v1"
 	kubeerrors "k8s.io/apimachinery/pkg/api/errors"
+	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/runtime/schema"
-	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	kubernetes "k8s.io/client-go/kubernetes/fake"
 	kubetesting "k8s.io/client-go/testing"
 
@@ -33,7 +36,7 @@ func newDeploymentCreateAction(ns string, deployment *appsv1.Deployment) kubetes
 func TestDeploymentServiceGetCreateOrUpdate(t *testing.T) {
 	testDeployment := &appsv1.Deployment{
 		ObjectMeta: metav1.ObjectMeta{
-			Name: "testdeployment1",
+			Name:            "testdeployment1",
 			ResourceVersion: "10",
 		},
 	}
@@ -41,20 +44,32 @@ func TestDeploymentServiceGetCreateOrUpdate(t *testing.T) {
 	testns := "testns"
 
 	tests := []struct {
-		name string
-		deployment *appsv1.Deployment
+		name                string
+		deployment          *appsv1.Deployment
 		getDeploymentResult *appsv1.Deployment
-		errorOnGet error
-		errorOnCreation error
-		expActions []kubetesting.Action
-		expErr bool
+		errorOnGet          error
+		errorOnCreation     error
+		expActions          []kubetesting.Action
+		expErr              bool
 	}{
 		{
-			name: "A new deployment should create a new deployment.",
-			deployment: testDeployment,
+			name:                "A new deployment should create a new deployment.",
+			deployment:          testDeployment,
 			getDeploymentResult: nil,
-			errorOnGet: kubeerrors.NewNotFound(schema.GroupResource{}, ""),
-			errorOnCreation: nil,
+			errorOnGet:          kubeerrors.NewNotFound(schema.GroupResource{}, ""),
+			errorOnCreation:     nil,
+			expActions: []kubetesting.Action{
+				newDeploymentGetAction(testns, testDeployment.ObjectMeta.Name),
+				newDeploymentCreateAction(testns, testDeployment),
+			},
+			expErr: false,
+		},
+		{
+			name:                "A new deployment should error when create a new deployment fails.",
+			deployment:          testDeployment,
+			getDeploymentResult: nil,
+			errorOnGet:          kubeerrors.NewNotFound(schema.GroupResource{}, ""),
+			errorOnCreation:     errors.New("wanted error"),
 			expActions: []kubetesting.Action{
 				newDeploymentGetAction(testns, testDeployment.ObjectMeta.Name),
 				newDeploymentCreateAction(testns, testDeployment),
@@ -62,11 +77,11 @@ func TestDeploymentServiceGetCreateOrUpdate(t *testing.T) {
 			expErr: true,
 		},
 		{
-			name: "An existent deployment should update the deployment.",
-			deployment: testDeployment,
+			name:                "An existent deployment should update the deployment.",
+			deployment:          testDeployment,
 			getDeploymentResult: testDeployment,
-			errorOnGet: nil,
-			errorOnCreation: nil,
+			errorOnGet:          nil,
+			errorOnCreation:     nil,
 			expActions: []kubetesting.Action{
 				newDeploymentGetAction(testns, testDeployment.ObjectMeta.Name),
 				newDeploymentUpdateAction(testns, testDeployment),
