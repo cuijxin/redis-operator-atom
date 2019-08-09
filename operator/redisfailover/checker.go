@@ -3,6 +3,8 @@ package redisfailover
 import (
 	"errors"
 	"time"
+
+	redisfailoverv1 "github.com/cuijxin/redis-operator-atom/api/redisfailover/v1"
 )
 
 const (
